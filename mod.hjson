@@ -1,14 +1,14 @@
 #the mod name as displayed in-game
-displayName: "Mod"
+displayName: "FullResource"
 
 #the internal name of your mod
-name: "up"
+name: "fullResource"
 
 #your name
 author: "Ancvike"
 
 #the fully qualified main class of the mod
-main: "FullResource.ExampleJavaMod"
+main: "code.MainMod"
 
 #the mod description as seen in the mod dialog
 description: "666"

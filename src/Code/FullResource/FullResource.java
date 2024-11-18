@@ -1,18 +1,14 @@
-package FullResource;
+package Code.FullResource;
 
-import arc.*;
-import arc.util.*;
-import mindustry.game.EventType.*;
-import mindustry.mod.*;
-import mindustry.ui.dialogs.*;
+import arc.Core;
+import arc.Events;
+import arc.util.Time;
+import mindustry.game.EventType;
+import mindustry.ui.dialogs.BaseDialog;
 
-public class ExampleJavaMod extends Mod{
-
-    public ExampleJavaMod(){
-
-
-        //listen for game load event
-        Events.on(ClientLoadEvent.class, e -> {
+public class FullResource {
+    public FullResource() {
+        Events.on(EventType.ClientLoadEvent.class, e -> {
             //show dialog upon startup
             Time.runTask(10f, () -> {
                 BaseDialog dialog = new BaseDialog("frog");
@@ -24,5 +20,4 @@ public class ExampleJavaMod extends Mod{
             });
         });
     }
-
 }
