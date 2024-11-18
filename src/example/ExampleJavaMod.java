@@ -12,7 +12,7 @@ import mindustry.ui.dialogs.*;
 public class ExampleJavaMod extends Mod{
 
     public ExampleJavaMod(){
-        Log.info("Loaded ExampleJavaMod constructor.");
+//        Log.info("Loaded ExampleJavaMod constructor.");
 
         //listen for game load event
         Events.on(ClientLoadEvent.class, e -> {
@@ -27,10 +27,10 @@ public class ExampleJavaMod extends Mod{
             });
         });
     }
-
-    @Override
-    public void loadContent(){
-        Log.info("Loading some example content.");
-    }
+//
+//    @Override
+//    public void loadContent(){
+//        Log.info("Loading some example content.");
+//    }
 
 }
