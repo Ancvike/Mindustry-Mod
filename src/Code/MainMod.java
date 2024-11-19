@@ -6,6 +6,6 @@ import mindustry.mod.*;
 public class MainMod extends Mod {
     //open
     public MainMod() {
-        FullResource fullResource = new FullResource();
+
     }
 }
