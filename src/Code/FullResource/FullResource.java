@@ -8,7 +8,7 @@ import mindustry.ui.dialogs.BaseDialog;
 
 public class FullResource {
     public FullResource() {
-        Events.on(EventType.ClientLoadEvent.class, e -> {
+        Events.on(EventType.WinEvent.class, e -> {
             //show dialog upon startup
             Time.runTask(10f, () -> {
                 BaseDialog dialog = new BaseDialog("frog");
