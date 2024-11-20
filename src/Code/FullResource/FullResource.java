@@ -1,15 +1,19 @@
 package Code.FullResource;
 
-import arc.Core;
-import mindustry.Vars;
-import mindustry.ui.dialogs.BaseDialog;
+import mindustry.content.SectorPresets;
+import static mindustry.content.Planets.serpulo;
+import mindustry.type.SectorPreset;
 
-public class FullResource {
+public class FullResource extends SectorPresets {
     public FullResource() {
-        BaseDialog dialog = new BaseDialog("frog");
-        dialog.cont.add("behold").row();
-        dialog.cont.image(Core.atlas.find("Code-java-mod-frog")).pad(20f).row();
-        dialog.cont.button("I see", dialog::hide).size(100f, 50f);
-        dialog.show();
+        groundZero = new SectorPreset("groundZero", serpulo, 15){{
+            alwaysUnlocked = true;
+            addStartingItems = true;
+            captureWave = 1;
+            difficulty = 1;
+            overrideLaunchDefaults = true;
+            noLighting = true;
+            startWaveTimeMultiplier = 3f;
+        }};
     }
 }
