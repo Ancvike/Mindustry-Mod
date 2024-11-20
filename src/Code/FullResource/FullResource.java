@@ -6,10 +6,8 @@ import mindustry.game.EventType;
 
 public class FullResource extends SectorPresets {
     public FullResource() {
-        Events.on(EventType.ClientLoadEvent.class, e ->{
+        for (;;) {
             groundZero.captureWave = 1;
-            System.out.println("123123");
-        });
-
+        }
     }
 }
