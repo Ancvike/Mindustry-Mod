@@ -8,7 +8,7 @@ name: "fullResource"
 author: "Ancvike"
 
 #the fully qualified main class of the mod
-main: "Code.MainMod"
+main: "Code.FullResource"
 
 #the mod description as seen in the mod dialog
 description: "666"
