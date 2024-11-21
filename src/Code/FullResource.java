@@ -11,6 +11,7 @@ public class FullResource extends Mod {
     public static final Seq<Window> windows = new Seq<>();
     public FullResource() {
         Events.on(EventType.ClientLoadEvent.class, e -> {
+            //
             windows.addAll(new Window1());
         });
     }
