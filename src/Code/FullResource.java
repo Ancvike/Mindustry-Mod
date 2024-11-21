@@ -12,6 +12,7 @@ import arc.*;
 public class FullResource extends Mod {
     public void init() {
         Events.on(ClientLoadEvent.class, e -> {
+            //
             WindowManager.init();
             DialogManager.init();
             FragmentManager.init();
