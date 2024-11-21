@@ -1,17 +1,23 @@
-package Code.ui;
+package Code.ui.fragments.sidebar.windows;
 
-import arc.*;
-import arc.func.*;
-import arc.input.*;
+import arc.Core;
+import arc.func.Cons;
+import arc.input.KeyCode;
 import arc.math.Mathf;
-import arc.math.geom.*;
+import arc.math.geom.Vec2;
 import arc.scene.Element;
-import arc.scene.event.*;
-import arc.scene.style.*;
-import arc.scene.ui.layout.*;
-import arc.util.*;
-import mindustry.gen.*;
-import mindustry.ui.*;
+import arc.scene.event.HandCursorListener;
+import arc.scene.event.InputEvent;
+import arc.scene.event.InputListener;
+import arc.scene.event.Touchable;
+import arc.scene.style.TextureRegionDrawable;
+import arc.scene.ui.layout.Table;
+import arc.util.Nullable;
+import arc.util.Scaling;
+import arc.util.Tmp;
+import mindustry.gen.Icon;
+import mindustry.gen.Tex;
+import mindustry.ui.Styles;
 
 import static arc.Core.scene;
 
@@ -55,7 +61,7 @@ public class Window extends Table {
             }).grow();
 
             t.table(Tex.buttonEdge3, b ->
-                    b.button(Icon.cancel, Styles.emptyi, () -> shown = false).grow()
+                b.button(Icon.cancel, Styles.emptyi, () -> shown = false).grow()
             ).maxWidth(8 * 15f).growY();
 
             t.touchable = Touchable.enabled;
@@ -65,7 +71,7 @@ public class Window extends Table {
 
         row();
         table(Styles.black5, pt -> {
-            pt.pane(Styles.noBarPane, new Table(this::buildBody)).scrollX(!disableRootScroll).scrollY(!disableRootScroll).grow();
+             pt.pane(Styles.noBarPane, new Table(this::buildBody)).scrollX(!disableRootScroll).scrollY(!disableRootScroll).grow();
         }).grow();
         row();
         table(Styles.black5, t -> {
