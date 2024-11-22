@@ -11,7 +11,7 @@ public class ui extends BaseDialog {
         super("调试页面");
         Table table = new Table();
         Slider speedSlider = new Slider(1, 10, 1, false);
-        Button applyButton = new Button(new BaseDrawable());
+        Button applyButton = new Button();
         applyButton.addListener(event -> {
             float selectedSpeed = speedSlider.getValue();
             // 处理选中速度
