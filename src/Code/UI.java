@@ -23,5 +23,6 @@ public class UI {
         });
         baseDialog.cont.add(exitButton).pad(10); // 添加退出按钮到对话框
         baseDialog.show();
+
     }
 }
