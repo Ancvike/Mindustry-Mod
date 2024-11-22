@@ -6,10 +6,8 @@ import mindustry.mod.Mod;
 
 public class FullResource extends Mod {
     public FullResource() {
-
         Events.on(EventType.ClientLoadEvent.class, e -> {
-            UI ui = new UI();
-            ui.show();
+            new UI();
         });
     }
 }
