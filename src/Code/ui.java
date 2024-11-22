@@ -23,5 +23,6 @@ public class ui extends BaseDialog {
         table.add(applyButton).pad(10);
         add(table).pad(10);
         pack();
+        setSize(200,100);
     }
 }
