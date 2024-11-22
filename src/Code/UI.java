@@ -22,5 +22,6 @@ public class UI {
             return true; // 返回 true 表示事件已处理
         });
         baseDialog.cont.add(exitButton).pad(10); // 添加退出按钮到对话框
+        baseDialog.show();
     }
 }
