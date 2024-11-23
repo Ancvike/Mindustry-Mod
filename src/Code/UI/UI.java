@@ -5,6 +5,8 @@ import mindustry.Vars;
 import mindustry.ui.dialogs.BaseDialog;
 
 public class UI {
+    BaseDialog baseDialog = new BaseDialog("按钮测试页");
+
     public UI() {
         Vars.ui.menuGroup.fill(c -> {
             c.bottom().right();
@@ -12,10 +14,9 @@ public class UI {
                 Vars.ui.loadfrag.show();
                 Time.runTask(100f, () -> {
                     Vars.ui.loadfrag.hide();
+                    baseDialog.addCloseButton();
+                    baseDialog.show();
                 });
-                BaseDialog baseDialog = new BaseDialog("按钮测试页");
-                baseDialog.addCloseButton();
-                baseDialog.show();
             }).size(200, 60).padBottom(45);
         });
     }
