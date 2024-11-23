@@ -8,6 +8,7 @@ import mindustry.ui.dialogs.BaseDialog;
 import java.util.Objects;
 
 public class UIExampleCode {
+    //
 //    BaseDialog baseDialog = new BaseDialog("测试页");
 //    Table table = new Table();
 //    Slider speedSlider = new Slider(1.0F, 10.0F, 1.0F, false);
@@ -23,5 +24,21 @@ public class UIExampleCode {
 //        BaseDialog var10001 = this.baseDialog;
 //        Objects.requireNonNull(var10001);
 //        var10000.clicked(var10001::hide);
+//    }
+    //
+//    BaseDialog baseDialog = new BaseDialog("按钮测试页");
+//
+//    public UI() {
+//        Vars.ui.menuGroup.fill(c -> {//Vars.ui.menuGroup为主界面
+//            c.bottom().right();
+//            c.button("点我", () -> {
+//                Vars.ui.loadfrag.show();
+//                Time.runTask(100f, () -> {//xx秒后运行下面代码
+//                    Vars.ui.loadfrag.hide();
+//                    baseDialog.addCloseButton();
+//                    baseDialog.show();
+//                });
+//            }).size(200, 60).padBottom(45);
+//        });
 //    }
 }
