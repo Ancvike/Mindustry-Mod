@@ -29,13 +29,13 @@ public class UIExampleCode {
 //    BaseDialog baseDialog = new BaseDialog("按钮测试页");
 //
 //    public UI() {
+//        baseDialog.addCloseButton();
 //        Vars.ui.menuGroup.fill(c -> {//Vars.ui.menuGroup为主界面
 //            c.bottom().right();
 //            c.button("点我", () -> {
 //                Vars.ui.loadfrag.show();
 //                Time.runTask(100f, () -> {//xx秒后运行下面代码
 //                    Vars.ui.loadfrag.hide();
-//                    baseDialog.addCloseButton();
 //                    baseDialog.show();
 //                });
 //            }).size(200, 60).padBottom(45);
