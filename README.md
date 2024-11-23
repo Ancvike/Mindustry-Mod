@@ -1,3 +1,5 @@
+Thanks to Sharlottes's Informatis mod for the helping with the mod.
+
 以下是 Mindustry Java 模组模板的翻译，适用于 Android 和 PC。
 
 构建桌面测试版本
@@ -25,4 +27,3 @@ compileOnly 意味着该依赖项仅在编译时存在，而不包含在 jar 中
 仅在你想要将另一个 Java 库与模组打包，并且该库在 Mindustry 中尚不存在时，才使用 implementation。
 [1] 在 Linux/Mac 上为 ./gradlew，但如果你使用 Linux，我假设你知道如何正确运行可执行文件。
 [2] 是的，我知道这很愚蠢。这是 GitHub UI 的限制——尽管 jar 本身是以未压缩形式上传的，但目前没有办法以单个文件下载它。
-
