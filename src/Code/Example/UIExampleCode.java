@@ -1,12 +1,5 @@
 package Code.Example;
 
-import arc.scene.ui.Slider;
-import arc.scene.ui.TextButton;
-import arc.scene.ui.layout.Table;
-import arc.util.Time;
-import mindustry.Vars;
-import mindustry.ui.dialogs.BaseDialog;
-
 import java.util.Objects;
 
 public class UIExampleCode {
