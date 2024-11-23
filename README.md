@@ -1,4 +1,4 @@
-Thanks to Sharlottes's Informatis mod for the helping with the mod.
+Thanks to Sharlottes's Informatis mod for helping with the mod.
 
 以下是 Mindustry Java 模组模板的翻译，适用于 Android 和 PC。
 
