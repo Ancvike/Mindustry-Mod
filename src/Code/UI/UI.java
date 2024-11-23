@@ -11,7 +11,7 @@ public class UI {
         Vars.ui.hudGroup.fill(t -> {
             t.add(imageButton).size(100,100);
             t.top();
-            t.originX = 300;
+            t.x = 300;
         });
     }
 
