@@ -10,8 +10,8 @@ public class UI {
     public UI() {
         Vars.ui.hudGroup.fill(t -> {
             t.add(imageButton).size(100,100);
-            t.right();
             t.top();
+            t.originX = 10;
         });
     }
 
