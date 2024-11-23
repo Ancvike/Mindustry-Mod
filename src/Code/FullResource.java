@@ -7,7 +7,7 @@ import mindustry.mod.Mod;
 
 public class FullResource extends Mod {
     public FullResource() {
-        Events.on(EventType.ClientLoadEvent.class, e -> {
+        Events.on(EventType.WorldLoadEndEvent.class, e -> {
             new UI();
         });
     }

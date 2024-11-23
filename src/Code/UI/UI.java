@@ -1,9 +1,11 @@
 package Code.UI;
 
-import arc.util.Time;
-import mindustry.Vars;
 import mindustry.ui.dialogs.BaseDialog;
 
 public class UI {
+    BaseDialog baseDialog = new BaseDialog("测试页");
 
+    public UI(BaseDialog baseDialog) {
+        baseDialog.show();
+    }
 }
