@@ -10,7 +10,7 @@ public class UI {
             c.bottom().right();
             c.button("点我", () -> {
                 Vars.ui.loadfrag.show();
-                Time.runTask(10f, () -> {
+                Time.runTask(100f, () -> {
                     Vars.ui.loadfrag.hide();
                 });
                 BaseDialog baseDialog = new BaseDialog("按钮测试页");
