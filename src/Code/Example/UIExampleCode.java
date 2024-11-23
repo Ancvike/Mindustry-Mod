@@ -3,6 +3,8 @@ package Code.Example;
 import arc.scene.ui.Slider;
 import arc.scene.ui.TextButton;
 import arc.scene.ui.layout.Table;
+import arc.util.Time;
+import mindustry.Vars;
 import mindustry.ui.dialogs.BaseDialog;
 
 import java.util.Objects;
@@ -41,6 +43,10 @@ public class UIExampleCode {
 //            }).size(200, 60).padBottom(45);
 //        });
 //    }
-    //
+    //世界加载完成事件
 //    WorldLoadEndEvent
+    //HUD界面,即世界加载后主界面
+//    Vars.ui.hudGroup.fill(t -> {
+//
+//    });
 }
