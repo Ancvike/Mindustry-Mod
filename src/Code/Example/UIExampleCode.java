@@ -1,7 +1,5 @@
 package Code.Example;
 
-import java.util.Objects;
-
 public class UIExampleCode {
     //
 //    BaseDialog baseDialog = new BaseDialog("测试页");
