@@ -12,7 +12,8 @@ public class UI {
     TextButton exitButton = new TextButton("退出测试");
 
     public UI() {
-        table.add(speedSlider).fillX().pad(10);  // 将滑块添加到表格，填充宽度并加一些边距
+        table.add(speedSlider).fillX().pad(10);
+        baseDialog.cont.add(exitButton).pad(10);// 将滑块添加到表格，填充宽度并加一些边距
         baseDialog.add(table);
         baseDialog.addCloseButton();  // 添加关闭按钮
         // 显示对话框
