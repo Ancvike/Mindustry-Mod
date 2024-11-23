@@ -13,7 +13,6 @@ public class UI {
             @Override
             public void run() {
                 baseDialog.show();
-
             }
         };
         Table table = new Table();  // 创建一个表格用于布局
