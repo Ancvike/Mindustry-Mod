@@ -1,8 +1,8 @@
 #the mod name as displayed in-game
-displayName: "fullResource"
+displayName: "FullResource"
 
 #the internal name of your mod
-name: "FullResource"
+name: "full-resource"
 
 #your name
 author: "Ancvike"
