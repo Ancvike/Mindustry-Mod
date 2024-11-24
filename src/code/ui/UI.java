@@ -1,7 +1,6 @@
 package code.ui;
 
 import arc.Core;
-import arc.scene.style.Drawable;
 import arc.scene.ui.ImageButton;
 import mindustry.Vars;
 import mindustry.ui.dialogs.BaseDialog;
@@ -14,7 +13,7 @@ public class UI {
             t.add(imageButton).size(70, 70);
             t.top();
             t.x = 300;
-            imageButton.button((Drawable) Core.atlas.find("full-resource-frog"), this::fullResource);
+            imageButton.button("",this::fullResource);
         });
     }
     public void fullResource() {
