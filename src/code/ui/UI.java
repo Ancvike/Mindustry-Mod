@@ -5,7 +5,7 @@ import arc.scene.ui.ImageButton;
 import mindustry.Vars;
 
 public class UI {
-    ImageButton imageButton = new ImageButton(Core.atlas.find("FullResource-frog"));
+    ImageButton imageButton = new ImageButton(Core.atlas.find("full-resource-frog"));
 
     public UI() {
         Vars.ui.hudGroup.fill(t -> {
