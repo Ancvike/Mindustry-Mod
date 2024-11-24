@@ -1,4 +1,4 @@
-package code.Example;
+package code.example;
 
 public class AuthorExampleCode {
     //原作者示例代码
