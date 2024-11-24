@@ -5,7 +5,7 @@ import arc.scene.ui.ImageButton;
 import mindustry.Vars;
 
 public class UI {
-    ImageButton imageButton = new ImageButton(Core.atlas.find("code-java-mod-frog"));
+    ImageButton imageButton = new ImageButton(Core.atlas.find("FullResource-frog"));
 
     public UI() {
         Vars.ui.hudGroup.fill(t -> {
