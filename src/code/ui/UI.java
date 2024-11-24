@@ -9,7 +9,7 @@ public class UI {
 
     public UI() {
         Vars.ui.hudGroup.fill(t -> {
-            t.add(imageButton).size(100,100);
+            t.add(imageButton).size(50,50);
             t.top();
             t.x = 300;
         });
