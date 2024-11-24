@@ -6,7 +6,7 @@ import mindustry.Vars;
 import mindustry.ui.dialogs.BaseDialog;
 
 public class UI {
-    private final ImageButton imageButton = new ImageButton();
+    private final ImageButton imageButton = new ImageButton(Core.atlas.find("full-resource-frog"));
 
     public UI() {
         Vars.ui.hudGroup.fill(t -> {
