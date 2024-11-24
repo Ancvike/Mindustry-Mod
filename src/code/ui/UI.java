@@ -13,7 +13,7 @@ public class UI {
             t.add(imageButton).size(70, 70);
             t.top();
             t.x = 300;
-            imageButton.button("",this::fullResource);
+            imageButton.clicked(this::fullResource);
         });
     }
     public void fullResource() {
