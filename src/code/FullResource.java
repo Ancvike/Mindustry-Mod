@@ -1,6 +1,6 @@
-package Code;
+package code;
 
-import Code.UI.UI;
+import code.UI.UI;
 import arc.Events;
 import mindustry.game.EventType;
 import mindustry.mod.Mod;

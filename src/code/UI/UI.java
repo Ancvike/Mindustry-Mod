@@ -1,11 +1,11 @@
-package Code.UI;
+package code.UI;
 
 import arc.Core;
 import arc.scene.ui.ImageButton;
 import mindustry.Vars;
 
 public class UI {
-    ImageButton imageButton = new ImageButton(Core.atlas.find("example-java-mod-frog"));
+    ImageButton imageButton = new ImageButton(Core.atlas.find("code-java-mod-frog"));
 
     public UI() {
         Vars.ui.hudGroup.fill(t -> {

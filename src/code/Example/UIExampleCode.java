@@ -1,4 +1,4 @@
-package Code.Example;
+package code.Example;
 
 public class UIExampleCode {
     //
