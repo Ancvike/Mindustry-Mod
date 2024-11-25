@@ -6,9 +6,7 @@ import arc.scene.ui.ImageButton;
 import mindustry.Vars;
 import mindustry.game.EventType;
 import mindustry.ui.dialogs.BaseDialog;
-
 import static mindustry.Vars.state;
-import static mindustry.Vars.world;
 
 public class UI {
     private final ImageButton imageButton = new ImageButton(Core.atlas.find("full-resource-frog"));
