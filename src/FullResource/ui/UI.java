@@ -22,7 +22,7 @@ public class UI {
     }
 
     public void dialog_show() {
-        if (state.rules.waves && !state.isCampaign()) {//区块是否占领
+        if (!(!state.rules.waves && state.isCampaign())) {//区块是否占领
             dialog.cont.add("区块未占领,无法使用该功能").row();
             dialog.cont.image(Core.atlas.find("full-resource-frog")).pad(20f).row();
             dialog.cont.button("了解", dialog::hide).size(100f, 50f);
