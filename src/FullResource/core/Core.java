@@ -6,7 +6,7 @@ import mindustry.ui.dialogs.BaseDialog;
 import static mindustry.Vars.state;
 
 public class Core {
-    public BaseDialog baseDialog_no = new BaseDialog("测试页");
+    public BaseDialog baseDialog_no = new BaseDialog("失败");
     public BaseDialog baseDialog_yes;
 
     public Core() {
