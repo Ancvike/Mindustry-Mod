@@ -1,4 +1,4 @@
-package code.ui;
+package FullResource.ui;
 
 import arc.Core;
 import arc.scene.ui.ImageButton;

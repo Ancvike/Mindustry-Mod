@@ -1,4 +1,4 @@
-package code.example;
+package FullResource.example;
 
 public class UIExampleCode {
     //

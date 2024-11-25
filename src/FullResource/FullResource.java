@@ -1,6 +1,6 @@
-package code;
+package FullResource;
 
-import code.ui.UI;
+import FullResource.ui.UI;
 import arc.Events;
 import mindustry.game.EventType;
 import mindustry.mod.Mod;
