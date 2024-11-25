@@ -23,7 +23,6 @@ public class UI {
         if(!state.rules.waves && state.isCampaign()){
 
         }else {
-            dialog.clear();
             dialog.cont.add("false").row();
             //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
             //mod名不能有大写字母
