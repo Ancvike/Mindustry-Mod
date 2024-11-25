@@ -19,6 +19,7 @@ public class UI {
             if (!state.rules.waves && state.isCampaign()) {
 
             } else {
+
                 dialog.cont.add("区块未占领,无法使用该功能").row();
                 //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
                 //mod名不能有大写字母
