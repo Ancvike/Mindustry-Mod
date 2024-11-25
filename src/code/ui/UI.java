@@ -23,11 +23,11 @@ public class UI {
         if(!state.rules.waves && state.isCampaign()){
 
         }else {
-            dialog.cont.add("揭锦聪是").row();
+            dialog.cont.add("sssss").row();
             //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
             //mod名不能有大写字母
             dialog.cont.image(Core.atlas.find("full-resource-frog")).pad(20f).row();
-            dialog.cont.button("error", dialog::hide).size(100f, 50f);
+            dialog.cont.button("error", dialog::remove).size(100f, 50f);
             dialog.show();
         }
     }
