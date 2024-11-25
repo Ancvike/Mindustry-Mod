@@ -19,11 +19,11 @@ public class UI {
             if (!state.rules.waves && state.isCampaign()) {
 
             } else {
-                dialog.cont.add("sssss").row();
+                dialog.cont.add("区块未占领,无法使用该功能").row();
                 //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
                 //mod名不能有大写字母
                 dialog.cont.image(Core.atlas.find("full-resource-frog")).pad(20f).row();
-                dialog.cont.button("error", dialog::hide).size(100f, 50f);
+                dialog.cont.button("了解", dialog::hide).size(100f, 50f);
                 dialog.show();
             }
             imageButton.clicked(() -> dialog.show());
