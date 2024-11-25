@@ -29,6 +29,7 @@ public class UI {
             dialog.cont.image(Core.atlas.find("full-resource-frog")).pad(20f).row();
             dialog.cont.button("error", dialog::hide).size(100f, 50f);
             dialog.show();
+            dialog.clear();
         }
     }
 }
