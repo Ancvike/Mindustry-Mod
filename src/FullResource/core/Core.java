@@ -9,7 +9,7 @@ import static mindustry.Vars.state;
 public class Core {
     public BaseDialog baseDialog_no = new BaseDialog("失败");
     public BaseDialog baseDialog_yes;
-    Table table;
+    Table table = new Table();
 
     public Core() {
         baseDialog_no_show();
@@ -21,7 +21,6 @@ public class Core {
         if (!state.rules.waves && state.isCampaign()) {//区块是否占领
             //先检测核心是哪个,并get资源量及上限
             new Core1().buildBody(table);
-
         } else {
             baseDialog_no.show();
         }
