@@ -21,6 +21,7 @@ public class Core {
         if (!state.rules.waves && state.isCampaign()) {//区块是否占领
             //先检测核心是哪个,并get资源量及上限
             new Core1().buildBody(table);
+
         } else {
             baseDialog_no.show();
         }
