@@ -42,7 +42,7 @@ public class Core1 {
         window = table;
         table.background(Styles.black8).top();
         table.pane(Styles.noBarPane, rebuild()).grow().name("core-pane").get().setScrollingDisabled(true, false);
-        Events.on(EventType.WorldLoadEvent.class, e -> resetUsed());
+        resetUsed();
     }
 
     Table rebuild() {
