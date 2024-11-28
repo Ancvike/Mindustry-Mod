@@ -26,7 +26,7 @@ public class Core1 {
 
     public Core1() {
         resetUsed();
-        Events.run(EventType.Trigger.update, () -> {
+//        Events.run(EventType.Trigger.update, () -> {
             heat += Time.delta;
             if (heat >= 60f) {
                 heat = 0f;
@@ -35,7 +35,7 @@ public class Core1 {
                     itemData.get(team).updateItems(team);
                 }
             }
-        });
+//        });
     }
 
     public void buildBody(Table table) {
