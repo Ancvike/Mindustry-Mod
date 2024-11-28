@@ -1,25 +1,20 @@
 package FullResource.core;
 
-import arc.*;
 import arc.graphics.Color;
 import arc.math.Mathf;
+import arc.scene.Element;
 import arc.scene.ui.Label;
-import arc.scene.ui.Tooltip;
 import arc.scene.ui.layout.Table;
-import mindustry.content.UnitTypes;
 import mindustry.core.UI;
 import mindustry.game.*;
 import arc.struct.*;
 import arc.util.*;
 import mindustry.*;
-import mindustry.gen.Groups;
 import mindustry.type.*;
 import mindustry.ui.Styles;
 import mindustry.world.blocks.storage.*;
 
-import static mindustry.Vars.iconSmall;
-
-public class Core1 {
+public class Core1 extends Element {
     Table window;
     float heat;
     final ObjectMap<Team, ItemData> itemData = new ObjectMap<>();
@@ -27,14 +22,14 @@ public class Core1 {
     public Core1() {
         resetUsed();
 //        Events.run(EventType.Trigger.update, () -> {
-            heat += Time.delta;
-            if (heat >= 60f) {
-                heat = 0f;
-                for (Team team : getTeams()) {
-                    if (!itemData.containsKey(team)) itemData.put(team, new ItemData());
-                    itemData.get(team).updateItems(team);
-                }
+        heat += Time.delta;
+        if (heat >= 60f) {
+            heat = 0f;
+            for (Team team : getTeams()) {
+                if (!itemData.containsKey(team)) itemData.put(team, new ItemData());
+                itemData.get(team).updateItems(team);
             }
+        }
 //        });
     }
 
@@ -61,32 +56,6 @@ public class Core1 {
         return new Table(table -> {
             table.add(team.name).color(team.color).row();
             int max = Math.max(1, Math.round(window.getWidth() / 2 / 60));
-            table.table(coretable -> {
-                int row = 0;
-
-                for (CoreBlock.CoreBuild core : team.cores()) {
-                    coretable.table(tt -> {
-                        tt.stack(
-                                new Table(s -> {
-                                    s.center();
-                                    Tooltip.Tooltips option = new Tooltip.Tooltips();
-                                    option.animations = false;
-                                }),
-                                new Table(h -> {
-                                    h.bottom().defaults().height(9f).width(9f).growX();
-                                    h.pack();
-                                })
-                        ).row();
-                        Label label = new Label(Strings.format("(@, @)", core.tileX(), core.tileY()));
-                        label.setFontScale(0.75f);
-                        tt.add(label);
-                    }).padTop(2).padLeft(4).padRight(4);
-                    if (row++ % max == max - 1) {
-                        coretable.row();
-                    }
-                }
-            }).row();
-
             table.table(itemTable -> {
                 int row = 0;
 
@@ -114,23 +83,6 @@ public class Core1 {
                     }
                 }
             }).row();
-
-            table.table(unitTable -> {
-                int row = 0;
-
-                for (UnitType unit : Vars.content.units()) {
-                    if (unit != UnitTypes.block && Groups.unit.contains(u -> u.type == unit && u.team == team)) {
-                        unitTable.table(tt -> {
-                            tt.center();
-                            tt.image(unit.uiIcon).size(iconSmall).padRight(3).tooltip(ttt -> ttt.background(Styles.black6).add(unit.localizedName).style(Styles.outlineLabel).margin(2f));
-                            tt.add(UI.formatAmount(Groups.unit.count(u -> u.team == team && u.type == unit))).padRight(3).minWidth(5 * 8f).left();
-                        });
-                        if (row++ % max == max - 1) {
-                            unitTable.row();
-                        }
-                    }
-                }
-            });
         });
     }
 
