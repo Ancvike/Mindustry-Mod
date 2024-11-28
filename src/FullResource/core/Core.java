@@ -33,7 +33,7 @@ public class Core {
                     tt.setBackground(Styles.black6);
                 });
                 t.row();
-            }).left();
+            });
             baseDialog.add(body);
             baseDialog.show();
         } else {
