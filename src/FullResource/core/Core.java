@@ -22,6 +22,7 @@ public class Core {
         if (!state.rules.waves && state.isCampaign()) {//区块是否占领
             //先检测核心是哪个,并get资源量及上限
             Core1 core1 = new Core1();
+            BaseDialog baseDialog = new BaseDialog("1");
             body = new Table(t -> {
                 t.name = "Window Buttons";
                 t.left();
@@ -32,8 +33,9 @@ public class Core {
                     tt.setBackground(Styles.black6);
                 });
                 t.row();
-
             }).left();
+            baseDialog.add(body);
+            baseDialog.show();
         } else {
             baseDialog_no.show();
         }
