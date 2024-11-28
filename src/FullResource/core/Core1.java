@@ -99,9 +99,7 @@ public class Core1 {
                     Item item = Vars.content.item(i);
                     if (!team.items().has(item)) continue;
                     itemTable.stack(
-                            new Table(ttt -> {
-                                ttt.add(UI.formatAmount(core.items.get(item))).minWidth(5 * 8f).left();
-                            }),
+                            new Table(ttt -> ttt.add(UI.formatAmount(core.items.get(item))).minWidth(5 * 8f).left()),
                             new Table(ttt -> {
                                 ttt.bottom().right();
                                 if (itemData == null || itemData.get(team) == null) return;
