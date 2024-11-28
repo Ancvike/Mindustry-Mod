@@ -2,7 +2,6 @@ package FullResource.core;
 
 import FullResource.ui.UI;
 import mindustry.Vars;
-import mindustry.ui.CoreItemsDisplay;
 import mindustry.ui.dialogs.BaseDialog;
 
 import static mindustry.Vars.state;
@@ -20,10 +19,7 @@ public class Core {
     public void onClick() {
         if (!state.rules.waves && state.isCampaign()) {//区块是否占领
             //先检测核心是哪个,并get资源量及上限
-            CoreItemsDisplay coreResource = Vars.ui.hudGroup.find("coreResource");
-            CoreItemsDisplay coreItemsTable = (CoreItemsDisplay) coreResource.getChildren().get(1);
-            CoreItemsDisplay coreItems = (CoreItemsDisplay) coreItemsTable.getChildren().get(0); // 核心资源显示
-
+            new Core1();
         } else {
             baseDialog_no.show();
         }
