@@ -1,8 +1,6 @@
 package FullResource.core;
 
 import FullResource.ui.UI;
-import arc.scene.ui.layout.Table;
-import mindustry.ui.Styles;
 import mindustry.ui.dialogs.BaseDialog;
 
 import static mindustry.Vars.state;
@@ -10,7 +8,6 @@ import static mindustry.Vars.state;
 public class Core {
     public BaseDialog baseDialog_no = new BaseDialog("失败");
     public BaseDialog baseDialog_yes;
-    public static Table body;
 
     public Core() {
         baseDialog_no_show();
@@ -21,7 +18,7 @@ public class Core {
     public void onClick() {
         if (!state.rules.waves && state.isCampaign()) {//区块是否占领
             //先检测核心是哪个,并get资源量及上限
-
+            CoreManager.init();
         } else {
             baseDialog_no.show();
         }
