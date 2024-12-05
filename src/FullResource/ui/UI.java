@@ -3,7 +3,6 @@ package FullResource.ui;
 import arc.Core;
 import arc.scene.ui.ImageButton;
 import mindustry.Vars;
-import mindustry.ui.dialogs.BaseDialog;
 
 public class UI {
     public final ImageButton imageButton = new ImageButton(Core.atlas.find("full-resource-frog"));
