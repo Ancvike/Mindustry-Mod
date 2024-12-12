@@ -33,7 +33,9 @@ public class Core {
     public void onClick() {
         if (!state.rules.waves && state.isCampaign()) {//区块是否占领
             //先检测核心是哪个,并get资源量及上限
-
+            for (Team team : getTeams()) {
+                baseDialog_yes.add(setTable(team));
+            }
         } else {
             baseDialog_no.show();
         }
@@ -79,6 +81,10 @@ public class Core {
             }).row();
         });
     }
+    public Seq<Team> getTeams(){
+        return Seq.with(Team.all).filter(Team::active);
+    }
+
     static class ItemData {
         final Seq<ItemStack> prevItems = new Seq<>();
         final Seq<ItemStack> updateItems = new Seq<>();
@@ -87,7 +93,7 @@ public class Core {
             resetItems();
         }
 
-        public void resetItems(){
+        public void resetItems() {
             Seq<ItemStack> stacks = Vars.content.items().map(item -> new ItemStack(item, 0));
             updateItems.clear().addAll(stacks);
             prevItems.clear().addAll(stacks);
