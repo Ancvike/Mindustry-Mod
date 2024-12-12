@@ -18,6 +18,7 @@ public class Core {
     public void onClick() {
         if (!state.rules.waves && state.isCampaign()) {//区块是否占领
             //先检测核心是哪个,并get资源量及上限
+            
         } else {
             baseDialog_no.show();
         }
