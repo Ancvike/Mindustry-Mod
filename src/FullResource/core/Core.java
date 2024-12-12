@@ -4,12 +4,10 @@ import FullResource.ui.UI;
 import arc.Events;
 import arc.graphics.Color;
 import arc.math.Mathf;
-import arc.scene.event.Touchable;
 import arc.scene.ui.Label;
-import arc.scene.ui.layout.Table;
+import arc.scene.ui.layout.*;
 import arc.struct.ObjectMap;
 import arc.struct.Seq;
-import arc.util.Scaling;
 import mindustry.Vars;
 import mindustry.game.Team;
 import mindustry.game.EventType;
@@ -22,11 +20,13 @@ import mindustry.world.blocks.storage.CoreBlock;
 import static mindustry.Vars.iconSmall;
 import static mindustry.Vars.state;
 
-public class Core {
+public class Core extends Table{
     public BaseDialog baseDialog_no = new BaseDialog("失败");
     public BaseDialog baseDialog_yes;
     Table window;
     final ObjectMap<Team, ItemData> itemData = new ObjectMap<>();
+    public boolean shown = true;
+    public boolean disableRootScroll = false;
 
     public Core() {
         baseDialog_no_show();
@@ -37,7 +37,7 @@ public class Core {
     public void onClick() {
         if (!state.rules.waves && state.isCampaign()) {//区块是否占领
             //先检测核心是哪个,并get资源量及上限
-
+            Vars.ui.hudGroup.fill(t -> build());
         } else {
             baseDialog_no.show();
         }
@@ -83,9 +83,11 @@ public class Core {
             }).row();
         });
     }
-    public Seq<Team> getTeams(){
+
+    public Seq<Team> getTeams() {
         return Seq.with(Team.all).filter(Team::active);
     }
+
     public void buildBody(Table table) {
         window = table;
 
@@ -93,11 +95,12 @@ public class Core {
         table.pane(Styles.noBarPane, rebuild()).grow().name("core-pane").get().setScrollingDisabled(true, false);
         Events.on(EventType.WorldLoadEvent.class, e -> resetUsed());
     }
+
     Table rebuild() {
         return new Table(table -> {
             table.top();
-            for(Team team : getTeams()) {
-                table.table(row-> {
+            for (Team team : getTeams()) {
+                table.table(row -> {
                     row.center();
                     row.add(setTable(team)).margin(8f).row();
                     row.image().height(4f).color(team.color).growX();
@@ -105,17 +108,18 @@ public class Core {
             }
         });
     }
-    public void resetUsed(){
-        for(Team team : getTeams()) {
+
+    public void resetUsed() {
+        for (Team team : getTeams()) {
             itemData.put(team, new ItemData());
         }
     }
-//    public void build() {
+
+    public void build() {
 //        float width = table(t -> {
 //            t.table(Tex.buttonEdge1, b -> {
 //                b.left();
 //                b.image(icon.getRegion()).scaling(Scaling.fill).size(20f);
-//                b.add(arc.Core.bundle.get("window." + name + ".name")).padLeft(20);
 //            }).grow();
 //
 //            t.table(Tex.buttonEdge3, b ->
@@ -126,26 +130,14 @@ public class Core {
 //            t.addListener(new DragHandleListener(this));
 //        }).height(8 * 6f).growX().prefWidth();
 //        this.minWindowWidth = Math.max(this.minWindowWidth, width);
-//
-//        row();
-//        table(Styles.black5, pt -> {
-//            pt.pane(Styles.noBarPane, new Table(this::buildBody)).scrollX(!disableRootScroll).scrollY(!disableRootScroll).grow();
-//        }).grow();
-//        row();
-//        table(Styles.black5, t -> {
-//            t.right();
-//            t.image(Icon.resizeSmall).size(20f).get().addListener(new ScaleInputListener(this));
-//        }).height(8 * 2f).growX();
-//
-//        visible(() -> shown);
-//        update(() -> {
-//            setPosition(
-//                    Mathf.clamp(x, 0, arc.Core.graphics.getWidth() - getWidth()),
-//                    Mathf.clamp(y, 0, arc.Core.graphics.getHeight() - getHeight())
-//            );
-//        });
-//    }
 
+        table(Styles.black5, pt -> pt.pane(Styles.noBarPane, new Table(this::buildBody)).scrollX(!disableRootScroll).scrollY(!disableRootScroll).grow()).grow();
+        visible(() -> shown);
+        update(() -> setPosition(
+                Mathf.clamp(x, 0, arc.Core.graphics.getWidth() - getWidth()),
+                Mathf.clamp(y, 0, arc.Core.graphics.getHeight() - getHeight())
+        ));
+    }
     static class ItemData {
         final Seq<ItemStack> prevItems = new Seq<>();
         final Seq<ItemStack> updateItems = new Seq<>();
