@@ -38,7 +38,7 @@ public class WindowManager {
                     }
                 }).size(40f).tooltip(tt -> {
                     tt.setBackground(Styles.black6);
-                    tt.label(() -> Core.bundle.get("window."+window.name+".name")).pad(2f);
+                    tt.label(() -> Core.bundle.get("CoreWindow")).pad(2f);
                 });
                 t.row();
             }

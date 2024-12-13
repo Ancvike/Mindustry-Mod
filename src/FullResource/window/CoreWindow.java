@@ -4,18 +4,22 @@ import arc.*;
 import mindustry.game.*;
 import arc.graphics.*;
 import arc.math.*;
+import arc.scene.event.*;
 import arc.scene.ui.*;
 import arc.scene.ui.layout.*;
 import arc.struct.*;
 import arc.util.*;
 import mindustry.*;
+import mindustry.content.*;
 import mindustry.core.*;
 import mindustry.gen.*;
+import mindustry.graphics.*;
 import mindustry.type.*;
 import mindustry.ui.*;
 import mindustry.world.blocks.storage.*;
 
 import static mindustry.Vars.*;
+
 public class CoreWindow extends Window {
     Table window;
     float heat;
