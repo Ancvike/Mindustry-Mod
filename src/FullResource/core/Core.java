@@ -3,8 +3,6 @@ package FullResource.core;
 import FullResource.ui.UI;
 import mindustry.ui.dialogs.BaseDialog;
 
-
-import static mindustry.Vars.iconSmall;
 import static mindustry.Vars.state;
 
 public class Core {
