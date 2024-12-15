@@ -1,6 +1,7 @@
 package FullResource;
 
 import FullResource.core.Core;
+import FullResource.core.DialogManager;
 import FullResource.core.SidebarSwitcher;
 import FullResource.core.WindowManager;
 import arc.Events;
@@ -13,7 +14,10 @@ public class FullResource extends Mod {
         Events.on(EventType.ClientLoadEvent.class, e -> {
             new Core();
             WindowManager.init();
-            sidebarSwitcherFragment = new SidebarSwitcher(WindowManager.body);
+            sidebarSwitcherFragment = new SidebarSwitcher(
+                    WindowManager.body,
+                    DialogManager.body
+            );
         });
     }
 }
