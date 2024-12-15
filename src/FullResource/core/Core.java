@@ -6,7 +6,6 @@ import mindustry.ui.dialogs.BaseDialog;
 import static mindustry.Vars.state;
 
 public class Core {
-    public static SidebarSwitcher sidebarSwitcherFragment;
     public BaseDialog baseDialog_no = new BaseDialog("失败");
     public BaseDialog baseDialog_yes;
 
@@ -19,8 +18,6 @@ public class Core {
     public void onClick() {
         if (!state.rules.waves && state.isCampaign()) {//区块是否占领
             //先检测核心是哪个,并get资源量及上限
-            WindowManager.init();
-            sidebarSwitcherFragment = new SidebarSwitcher(WindowManager.body);
         } else {
             baseDialog_no.show();
         }

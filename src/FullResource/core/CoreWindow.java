@@ -3,17 +3,12 @@ package FullResource.core;
 import arc.Events;
 import arc.graphics.Color;
 import arc.math.Mathf;
-import arc.scene.event.HandCursorListener;
-import arc.scene.ui.Image;
 import arc.scene.ui.Label;
 import arc.scene.ui.ScrollPane;
-import arc.scene.ui.Tooltip;
 import arc.scene.ui.layout.Table;
 import arc.struct.ObjectMap;
 import arc.struct.Seq;
-import arc.util.Strings;
 import arc.util.Time;
-import arc.util.Tmp;
 import mindustry.Vars;
 import mindustry.content.UnitTypes;
 import mindustry.core.UI;
@@ -21,14 +16,12 @@ import mindustry.game.EventType;
 import mindustry.game.Team;
 import mindustry.gen.Groups;
 import mindustry.gen.Icon;
-import mindustry.graphics.Pal;
 import mindustry.type.Item;
 import mindustry.type.ItemStack;
 import mindustry.type.UnitType;
 import mindustry.ui.Styles;
 import mindustry.world.blocks.storage.CoreBlock;
 
-import static mindustry.Vars.iconLarge;
 import static mindustry.Vars.iconSmall;
 
 public class CoreWindow extends Window {
