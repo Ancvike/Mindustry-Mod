@@ -2,14 +2,19 @@ package FullResource.core;
 
 import arc.Core;
 import arc.graphics.g2d.Lines;
-import arc.math.*;
-import arc.scene.*;
-import arc.scene.actions.*;
-import arc.scene.ui.*;
-import arc.scene.ui.layout.*;
+import arc.math.Interp;
+import arc.scene.Element;
+import arc.scene.actions.MoveToAction;
+import arc.scene.actions.SizeToAction;
+import arc.scene.actions.VisibleAction;
+import arc.scene.ui.ImageButton;
+import arc.scene.ui.layout.Cell;
+import arc.scene.ui.layout.Stack;
+import arc.scene.ui.layout.Table;
 import arc.util.Log;
-import mindustry.*;
-import mindustry.gen.*;
+import mindustry.Vars;
+import mindustry.gen.Icon;
+import mindustry.gen.Tex;
 import mindustry.graphics.Pal;
 
 public class SidebarSwitcher {
@@ -24,8 +29,9 @@ public class SidebarSwitcher {
             Lines.stroke(5, Pal.gray);
             Lines.line(this.x, this.y + this.height, this.x + this.width, this.y + this.height);
         }
+
         {
-            setStyle(new ImageButton.ImageButtonStyle() {{
+            setStyle(new ImageButtonStyle() {{
                 up = Tex.buttonEdge4;
                 imageUp = Icon.right;
             }});
@@ -39,12 +45,13 @@ public class SidebarSwitcher {
                 Log.info(sidebars[showIndex].getMinWidth());
                 Log.info(sidebars[showIndex].getPrefWidth());
                 actShowMoveX(currentSidebar, 0, -currentSidebar.getWidth());
-                actShowMoveX(nextSidebar, -nextSidebar.getWidth(),0);
+                actShowMoveX(nextSidebar, -nextSidebar.getWidth(), 0);
                 actResizeWidth(this, nextSidebar.getWidth());
             });
-        }};
+        }
+    };
 
-    public SidebarSwitcher(Table ...sidebars) {
+    public SidebarSwitcher(Table... sidebars) {
         this.sidebars = sidebars;
 
         Vars.ui.hudGroup.fill(t -> {
@@ -64,7 +71,7 @@ public class SidebarSwitcher {
         visibleAction.setVisible(to >= 0);
 
         element.setPosition(from, element.y);
-        if(to >= 0) element.actions(visibleAction, moveToAction);
+        if (to >= 0) element.actions(visibleAction, moveToAction);
         else element.actions(moveToAction, visibleAction);
         element.act(arc.Core.graphics.getDeltaTime());
         element.draw();
@@ -82,10 +89,10 @@ public class SidebarSwitcher {
 
     public void rebuildSidebarTable() {
         sidebarTable.visible = Core.settings.getBool("sidebar");
-        if(!sidebarTable.visible) return;
+        if (!sidebarTable.visible) return;
 
         Stack sidebarTables = new Stack();
-        for(Table elem : sidebars) {
+        for (Table elem : sidebars) {
             sidebarTables.add(new Table(table -> {
                 table.left();
                 table.add(elem).growY();
