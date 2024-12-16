@@ -1,7 +1,6 @@
 package FullResource.core;
 
 import FullResource.ui.UI;
-import mindustry.game.Team;
 import mindustry.ui.dialogs.BaseDialog;
 
 import static mindustry.Vars.state;
@@ -9,7 +8,6 @@ import static mindustry.Vars.state;
 public class Core {
     public BaseDialog baseDialog_no = new BaseDialog("失败");
     public BaseDialog baseDialog_yes = new BaseDialog("成功");
-    public CoreWindow coreWindow = new CoreWindow();
 
     public Core() {
         baseDialog_no_show();
@@ -34,9 +32,6 @@ public class Core {
     }
 
     public void baseDialog_yes_show() {
-        for (Team team : coreWindow.getTeams()) {
-            baseDialog_yes.add(coreWindow.setTable(team));
-        }
         baseDialog_yes.cont.button("了解", baseDialog_yes::hide).size(100f, 50f);
     }
 }
