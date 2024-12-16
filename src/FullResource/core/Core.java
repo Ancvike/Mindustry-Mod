@@ -42,6 +42,9 @@ public class Core {
     }
 
     public void baseDialog_yes_show() {
+        table.visible = true;
+        table.setWidth(300);
+        table.setHeight(100);
         for (Team team : getTeams()) {
             table.add(setTable(team));
         }
