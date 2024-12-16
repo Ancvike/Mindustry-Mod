@@ -29,9 +29,7 @@ public class Core {
     public void onClick() {
         if (!state.rules.waves && state.isCampaign()) {//区块是否占领
             //先检测核心是哪个,并get资源量及上限
-            Vars.ui.hudGroup.fill(t -> {
-                t.add(table);
-            });
+            Vars.ui.hudGroup.fill(t -> t.add(table));
             baseDialog_yes.show();
         } else {
             baseDialog_no.show();
