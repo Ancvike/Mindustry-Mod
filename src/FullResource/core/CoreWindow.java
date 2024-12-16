@@ -37,8 +37,8 @@ public class CoreWindow extends Table {
             heat += Time.delta;
             if(heat >= 60f) {
                 heat = 0f;
-                ScrollPane pane = find("core-pane");
-                pane.setWidget(rebuild());
+//                ScrollPane pane = find("core-pane");
+//                pane.setWidget(rebuild());
                 for(Team team : getTeams()) {
                     if(!itemData.containsKey(team)) itemData.put(team, new ItemData());
                     itemData.get(team).updateItems(team);
