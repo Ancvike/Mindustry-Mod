@@ -7,8 +7,6 @@ import mindustry.mod.Mod;
 
 public class FullResource extends Mod {
     public FullResource() {
-        Events.on(EventType.ClientLoadEvent.class, e -> {
-            new Core();
-        });
+        Events.on(EventType.ClientLoadEvent.class, e -> new Core());
     }
 }
