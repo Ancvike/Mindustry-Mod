@@ -10,27 +10,24 @@ import arc.struct.ObjectMap;
 import arc.struct.Seq;
 import arc.util.Time;
 import mindustry.Vars;
-import mindustry.content.UnitTypes;
 import mindustry.core.UI;
 import mindustry.game.EventType;
 import mindustry.game.Team;
-import mindustry.gen.Groups;
 import mindustry.gen.Icon;
 import mindustry.type.Item;
 import mindustry.type.ItemStack;
-import mindustry.type.UnitType;
 import mindustry.ui.Styles;
 import mindustry.world.blocks.storage.CoreBlock;
 
 import static mindustry.Vars.iconSmall;
 
-public class CoreWindow extends Window {
+public class CoreWindow extends Table {
     Table window;
     float heat;
     final ObjectMap<Team, ItemData> itemData = new ObjectMap<>();
 
     public CoreWindow()  {
-        super(Icon.list, "core");
+        super(Icon.list);
         height = 300;
         width = 300;
 
@@ -50,7 +47,6 @@ public class CoreWindow extends Window {
         });
     }
 
-    @Override
     public void buildBody(Table table) {
         window = table;
 
@@ -86,7 +82,6 @@ public class CoreWindow extends Window {
         return new Table(table -> {
             table.add(team.name).color(team.color).row();
             int max = Math.max(1, Math.round(window.getWidth()/2/60));
-
             table.table(itemTable -> {
                 int row = 0;
 
@@ -117,23 +112,6 @@ public class CoreWindow extends Window {
                     }
                 }
             }).row();
-
-            table.table(unitTable -> {
-                int row = 0;
-
-                for(UnitType unit : Vars.content.units()){
-                    if(unit != UnitTypes.block && Groups.unit.contains(u -> u.type == unit && u.team == team)){
-                        unitTable.table(tt -> {
-                            tt.center();
-                            tt.image(unit.uiIcon).size(iconSmall).padRight(3).tooltip(ttt -> ttt.background(Styles.black6).add(unit.localizedName).style(Styles.outlineLabel).margin(2f));
-                            tt.add(UI.formatAmount(Groups.unit.count(u -> u.team == team && u.type == unit))).padRight(3).minWidth(5 * 8f).left();
-                        });
-                        if(row++ % max == max-1){
-                            unitTable.row();
-                        }
-                    }
-                }
-            });
         });
     }
 
