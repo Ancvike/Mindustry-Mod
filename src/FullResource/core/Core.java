@@ -45,6 +45,7 @@ public class Core {
         for (Team team : getTeams()) {
             table.add(setTable(team));
         }
+        baseDialog_yes.cont.add(table).row();
         baseDialog_yes.cont.button("了解", baseDialog_yes::hide).size(100f, 50f);
     }
 
