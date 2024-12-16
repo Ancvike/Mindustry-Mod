@@ -29,6 +29,9 @@ public class Core {
     public void onClick() {
         if (!state.rules.waves && state.isCampaign()) {//区块是否占领
             //先检测核心是哪个,并get资源量及上限
+            Vars.ui.hudGroup.fill(t -> {
+                t.add(table);
+            });
             baseDialog_yes.show();
         } else {
             baseDialog_no.show();
@@ -42,13 +45,9 @@ public class Core {
     }
 
     public void baseDialog_yes_show() {
-        table.visible = true;
-        table.setWidth(300);
-        table.setHeight(100);
         for (Team team : getTeams()) {
             table.add(setTable(team));
         }
-        baseDialog_yes.cont.add(table).row();
         baseDialog_yes.cont.button("了解", baseDialog_yes::hide).size(100f, 50f);
     }
 
