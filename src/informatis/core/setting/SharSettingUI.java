@@ -5,11 +5,7 @@ import arc.scene.ui.TextButton;
 import arc.scene.ui.layout.*;
 import arc.struct.*;
 import arc.util.Align;
-import informatis.ui.fragments.QuickSchemFragment;
-import informatis.ui.fragments.SidebarSwitcher;
-import informatis.ui.fragments.sidebar.TroopingFragment;
-import informatis.ui.fragments.sidebar.dialogs.DialogManager;
-import informatis.ui.fragments.sidebar.windows.WindowManager;
+import informatis.ui.fragments.FragmentManager;
 import mindustry.ui.*;
 
 import static arc.Core.*;
@@ -17,19 +13,11 @@ import static informatis.core.setting.SettingHelper.*;
 import static mindustry.Vars.*;
 
 public class SharSettingUI {
-    public static QuickSchemFragment quickSchemFragment;
-    public static SidebarSwitcher sidebarSwitcherFragment;
     public static void init(){
-        quickSchemFragment = new QuickSchemFragment();
-        sidebarSwitcherFragment = new SidebarSwitcher(
-                WindowManager.body,
-                DialogManager.body,
-                new TroopingFragment() // cache later?
-        );
         Seq<Seq<SharSetting>> settingSeq = new Seq<>();
         Seq<SharSetting> tapSeq = new Seq<>();
-        addGraphicCheckSetting("schem", !mobile, tapSeq, () -> quickSchemFragment.rebuildBody());
-        addGraphicCheckSetting("sidebar", !mobile, tapSeq, () -> sidebarSwitcherFragment.rebuildSidebarTable());
+        addGraphicCheckSetting("schem", !mobile, tapSeq, () -> FragmentManager.quickSchemFragment.rebuildBody());
+        addGraphicCheckSetting("sidebar", !mobile, tapSeq, () -> FragmentManager.sidebarSwitcherFragment.rebuildSidebarTable());
         addGraphicCheckSetting("elementdebug", false, tapSeq);
         addGraphicCheckSetting("hiddenElem", false, tapSeq);
         addGraphicCheckSetting("serverfilter", false, tapSeq, () -> {});
