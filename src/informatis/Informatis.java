@@ -15,8 +15,7 @@ public class Informatis extends Mod {
             SharSettingUI.init();
             WindowManager.init();
             DialogManager.init();
-            FragmentManager.init();
-
+//            FragmentManager.init();
             SVars.init();
         });
     }
