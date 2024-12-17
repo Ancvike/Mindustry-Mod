@@ -17,15 +17,15 @@ public class Informatis extends Mod {
     @Override
     public void init(){
         Events.on(ClientLoadEvent.class, e -> {
-            ModMetadata.init();
+//            ModMetadata.init();
             SharSettingUI.init();
             WindowManager.init();
             DialogManager.init();
             FragmentManager.init();
-            OverDrawManager.init();
-            ToolManager.init();
-            SVars.init();
-            UpdateChecker.init();
+//            OverDrawManager.init();
+//            ToolManager.init();
+//            SVars.init();
+//            UpdateChecker.init();
         });
     }
 }
