@@ -6,13 +6,10 @@ import arc.scene.ui.layout.*;
 import arc.util.*;
 import mindustry.gen.*;
 import mindustry.ui.*;
-import mindustry.world.Block;
 import mindustry.world.Tile;
-import mindustry.world.blocks.environment.Floor;
 
 import static informatis.SUtils.*;
 import static arc.Core.*;
-import static mindustry.Vars.*;
 
 public class TileInfoFragment {
     private boolean waveShown;
