@@ -6,9 +6,6 @@ import mindustry.gen.*;
 import mindustry.world.blocks.units.*;
 
 public class UnitCargoLinkDraw extends OverDraw {
-    public UnitCargoLinkDraw() {
-        super("unitCargoLink");
-    }
 
     @Override
     public void onBuilding(Building building) {

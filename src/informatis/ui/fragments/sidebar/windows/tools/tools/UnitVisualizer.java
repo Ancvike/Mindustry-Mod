@@ -1,41 +1,13 @@
 package informatis.ui.fragments.sidebar.windows.tools.tools;
 
-import arc.Core;
-import arc.Events;
-import arc.graphics.Color;
-import arc.graphics.g2d.Draw;
 import arc.graphics.gl.FrameBuffer;
-import arc.math.Mathf;
-import arc.struct.Seq;
-import arc.util.Log;
-import informatis.shaders.Shaders;
-import mindustry.game.EventType;
 import mindustry.graphics.Layer;
 
 public class UnitVisualizer extends Tool {
-    Seq<Object>[] cachedTextures;
     final float[] layers = { Layer.flyingUnit, Layer.flyingUnitLow, Layer.legUnit, Layer.groundUnit};
     final FrameBuffer buffer = new FrameBuffer();
     float alpha = 1;
 
-    public UnitVisualizer() {
-        super("unitVisualizer");
-
-        Events.run(EventType.Trigger.draw, () -> {
-            float alphaTo = isEnabled() ? 0.5f : 1f;
-            alpha = Mathf.lerpDelta(alpha, alphaTo, 0.06f);
-            Shaders.transparent.alpha = alpha;
-            if (Mathf.equal(alpha, 1f)) return;
-            Log.info(alpha);
-            buffer.resize(Core.graphics.getWidth(), Core.graphics.getHeight());
-            for (float layer : layers) {
-                Draw.drawRange(layer, () -> buffer.begin(Color.clear), () -> {
-                    buffer.end();
-                    buffer.blit(Shaders.transparent);
-                });
-            }
-        });
-    }
 }
 /*
         Core.app.post(() -> {

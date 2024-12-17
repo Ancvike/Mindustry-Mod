@@ -11,9 +11,6 @@ import mindustry.world.Tile;
 import static mindustry.Vars.state;
 
 public class UnitPathLineDraw extends OverDraw {
-    public UnitPathLineDraw() {
-        super("unitPathLine");
-    }
 
     @Override
     public void onUnit(Unit unit) {

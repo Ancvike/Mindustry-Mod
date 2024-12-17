@@ -7,5 +7,4 @@ public class Tool extends SettingConfiger {
         super(name);
     }
 
-    public void onUpdate() {}
 }

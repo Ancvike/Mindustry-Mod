@@ -4,9 +4,6 @@ import mindustry.world.Tile;
 import mindustry.world.blocks.logic.MessageBlock;
 
 public class MemoViewDraw extends OverDraw {
-    public MemoViewDraw() {
-        super("memoView");
-    }
 
     @Override
     public void onTile(Tile tile) {

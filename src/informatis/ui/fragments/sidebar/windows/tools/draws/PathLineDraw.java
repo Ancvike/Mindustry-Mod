@@ -8,9 +8,6 @@ import mindustry.world.Tile;
 import static mindustry.Vars.state;
 
 public class PathLineDraw extends OverDraw {
-    public PathLineDraw() {
-        super("pathLine");
-    }
 
     @Override
     public void draw() {

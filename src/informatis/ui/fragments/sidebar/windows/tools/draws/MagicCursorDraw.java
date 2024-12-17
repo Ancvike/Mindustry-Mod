@@ -10,9 +10,6 @@ import mindustry.content.Fx;
 import static mindustry.Vars.mobile;
 
 public class MagicCursorDraw extends OverDraw {
-    public MagicCursorDraw() {
-        super("gaycursor");
-    }
 
     @Override
     public void draw() {

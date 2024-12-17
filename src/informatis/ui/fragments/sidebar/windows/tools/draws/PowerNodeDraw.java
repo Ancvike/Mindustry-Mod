@@ -16,10 +16,6 @@ import static mindustry.Vars.world;
 public class PowerNodeDraw extends OverDraw {
     final Seq<Building> linkedNodes = new Seq<>();
 
-    public PowerNodeDraw() {
-        super("powerNode");
-    }
-
     @Override
     public void draw() {
         if(getTarget() instanceof Building build) {

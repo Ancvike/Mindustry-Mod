@@ -1,7 +1,6 @@
 package informatis;
 
 import arc.Events;
-import informatis.shaders.*;
 import arc.graphics.g2d.TextureRegion;
 import mindustry.entities.abilities.ShieldRegenFieldAbility;
 import mindustry.game.EventType;
