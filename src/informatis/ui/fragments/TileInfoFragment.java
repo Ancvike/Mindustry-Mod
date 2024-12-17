@@ -11,7 +11,6 @@ import mindustry.world.Tile;
 import mindustry.world.blocks.environment.Floor;
 
 import static informatis.SUtils.*;
-import static informatis.SVars.*;
 import static arc.Core.*;
 import static mindustry.Vars.*;
 
@@ -57,30 +56,6 @@ public class TileInfoFragment {
         tileInfoTable.clear();
         tileInfoTable.center();
         tileInfoTable.table(head -> {
-            head.table(image -> {
-                image.left();
-                image.image(() -> {
-                    Tile tile = getTile();
-                    if(tile == null) return clear;
-                    Floor floor = tile.floor();
-                    if(floor.uiIcon == error) return clear;
-                    return floor.uiIcon;
-                }).size(iconSmall);
-                image.image(() -> {
-                    Tile tile = getTile();
-                    if(tile == null) return clear;
-                    Floor floor = tile.overlay();
-                    if(floor.uiIcon == error) return clear;
-                    return floor.uiIcon;
-                }).size(iconSmall);
-                image.image(() -> {
-                    Tile tile = getTile();
-                    if(tile == null) return clear;
-                    Block floor = tile.block();
-                    if(floor.uiIcon == error) return clear;
-                    return floor.uiIcon;
-                }).size(iconSmall);
-            });
             head.label(() -> {
                 Tile tile = getTile();
                 if(tile == null) return "(NaN, NaN)";
