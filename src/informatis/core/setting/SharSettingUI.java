@@ -16,7 +16,6 @@ public class SharSettingUI {
     public static void init(){
         Seq<Seq<SharSetting>> settingSeq = new Seq<>();
         Seq<SharSetting> tapSeq = new Seq<>();
-        addGraphicCheckSetting("tileinfo", true, tapSeq, () -> FragmentManager.tileInfoFragment.rebuildTileInfoTable());
         addGraphicCheckSetting("schem", !mobile, tapSeq, () -> FragmentManager.quickSchemFragment.rebuildBody());
         addGraphicCheckSetting("sidebar", !mobile, tapSeq, () -> FragmentManager.sidebarSwitcherFragment.rebuildSidebarTable());
         addGraphicCheckSetting("elementdebug", false, tapSeq);
