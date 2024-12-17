@@ -6,7 +6,6 @@ import arc.scene.ui.layout.*;
 import arc.struct.*;
 import arc.util.Align;
 import mindustry.ui.*;
-import informatis.ui.fragments.FragmentManager;
 
 import static arc.Core.*;
 import static informatis.core.setting.SettingHelper.*;
@@ -16,8 +15,8 @@ public class SharSettingUI {
     public static void init(){
         Seq<Seq<SharSetting>> settingSeq = new Seq<>();
         Seq<SharSetting> tapSeq = new Seq<>();
-        addGraphicCheckSetting("schem", !mobile, tapSeq, () -> FragmentManager.quickSchemFragment.rebuildBody());
-        addGraphicCheckSetting("sidebar", !mobile, tapSeq, () -> FragmentManager.sidebarSwitcherFragment.rebuildSidebarTable());
+//        addGraphicCheckSetting("schem", !mobile, tapSeq, () -> FragmentManager.quickSchemFragment.rebuildBody());
+//        addGraphicCheckSetting("sidebar", !mobile, tapSeq, () -> FragmentManager.sidebarSwitcherFragment.rebuildSidebarTable());
         addGraphicCheckSetting("elementdebug", false, tapSeq);
         addGraphicCheckSetting("hiddenElem", false, tapSeq);
         addGraphicCheckSetting("serverfilter", false, tapSeq, () -> {});
