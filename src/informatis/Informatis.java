@@ -5,6 +5,7 @@ import informatis.ui.fragments.sidebar.dialogs.DialogManager;
 import informatis.ui.fragments.sidebar.windows.*;
 import informatis.ui.fragments.FragmentManager;
 
+import informatis.ui.fragments.sidebar.windows.tools.draws.OverDrawManager;
 import mindustry.game.EventType.*;
 import mindustry.mod.*;
 import arc.*;
@@ -17,9 +18,8 @@ public class Informatis extends Mod {
             WindowManager.init();
             DialogManager.init();
             FragmentManager.init();
-//            OverDrawManager.init();
-//            ToolManager.init();
-//            SVars.init();
+            OverDrawManager.init();
+            SVars.init();
         });
     }
 }
