@@ -10,8 +10,6 @@ import static arc.Core.atlas;
 import static mindustry.Vars.content;
 
 public class SVars {
-    public static final TextureRegion clear = atlas.find("clear");
-    public static final TextureRegion error = atlas.find("error");
     public static informatis.core.Pathfinder pathfinder;
 
     public static void init() {
