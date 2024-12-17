@@ -19,6 +19,12 @@ public class Informatis extends Mod {
         Events.on(ClientLoadEvent.class, e -> {
             ModMetadata.init();
             SharSettingUI.init();
+//            WindowManager.init();
+            DialogManager.init();
+            FragmentManager.init();
+            OverDrawManager.init();
+            ToolManager.init();
+            SVars.init();
             UpdateChecker.init();
         });
     }
