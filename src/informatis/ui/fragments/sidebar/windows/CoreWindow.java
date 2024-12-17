@@ -2,7 +2,6 @@ package informatis.ui.fragments.sidebar.windows;
 
 import arc.*;
 import informatis.SUtils;
-import informatis.ui.components.SBar;
 import mindustry.game.*;
 import arc.graphics.*;
 import arc.math.*;
@@ -15,7 +14,6 @@ import mindustry.*;
 import mindustry.content.*;
 import mindustry.core.*;
 import mindustry.gen.*;
-import mindustry.graphics.*;
 import mindustry.type.*;
 import mindustry.ui.*;
 import mindustry.world.blocks.storage.*;
@@ -98,11 +96,6 @@ public class CoreWindow extends Window {
                                 s.add(image).size(iconLarge).get().addListener(new Tooltip(tool -> {
                                     tool.background(Styles.black6).label(() -> "([#" + Tmp.c1.set(Color.green).lerp(Color.red, 1 - core.healthf()).toString() + "]" + Strings.fixed(core.health, 2) + "[]/" + Strings.fixed(core.block.health, 2) + ")");
                                 }, option));
-                            }),
-                            new Table(h -> {
-                                h.bottom().defaults().height(9f).width(iconLarge * 1.5f).growX();
-                                h.add(new SBar("", Pal.health, () -> core.health / core.block.health));
-                                h.pack();
                             })
                         ).row();
                         Label label = new Label(Strings.format("(@, @)",core.tileX(), core.tileY()));
