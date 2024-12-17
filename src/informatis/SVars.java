@@ -1,13 +1,18 @@
 package informatis;
 
 import arc.Events;
+import informatis.shaders.*;
+import arc.graphics.g2d.TextureRegion;
 import mindustry.entities.abilities.ShieldRegenFieldAbility;
 import mindustry.game.EventType;
 import mindustry.type.UnitType;
 
+import static arc.Core.atlas;
 import static mindustry.Vars.content;
 
 public class SVars {
+    public static final TextureRegion clear = atlas.find("clear");
+    public static final TextureRegion error = atlas.find("error");
     public static informatis.core.Pathfinder pathfinder;
 
     public static void init() {

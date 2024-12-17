@@ -82,32 +82,6 @@ public class CoreWindow extends Window {
         return new Table(table -> {
             table.add(team.name).color(team.color).row();
             int max = Math.max(1, Math.round(window.getWidth()/2/60));
-            table.table(coretable -> {
-                int row = 0;
-
-                for(CoreBlock.CoreBuild core : team.cores()) {
-                    coretable.table(tt -> {
-                        tt.stack(
-                            new Table(s -> {
-                                s.center();
-                                Image image = getCoreImage(core);
-                                Tooltip.Tooltips option = new Tooltip.Tooltips();
-                                option.animations=false;
-                                s.add(image).size(iconLarge).get().addListener(new Tooltip(tool -> {
-                                    tool.background(Styles.black6).label(() -> "([#" + Tmp.c1.set(Color.green).lerp(Color.red, 1 - core.healthf()).toString() + "]" + Strings.fixed(core.health, 2) + "[]/" + Strings.fixed(core.block.health, 2) + ")");
-                                }, option));
-                            })
-                        ).row();
-                        Label label = new Label(Strings.format("(@, @)",core.tileX(), core.tileY()));
-                        label.setFontScale(0.75f);
-                        tt.add(label);
-                    }).padTop(2).padLeft(4).padRight(4);
-                    if(row++ % max == max-1){
-                        coretable.row();
-                    }
-                }
-            }).row();
-
             table.table(itemTable -> {
                 int row = 0;
 
