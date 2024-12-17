@@ -1,12 +1,10 @@
 package informatis;
 
 import arc.Events;
-import arc.graphics.g2d.TextureRegion;
 import mindustry.entities.abilities.ShieldRegenFieldAbility;
 import mindustry.game.EventType;
 import mindustry.type.UnitType;
 
-import static arc.Core.atlas;
 import static mindustry.Vars.content;
 
 public class SVars {
