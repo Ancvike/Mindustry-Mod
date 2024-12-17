@@ -20,7 +20,7 @@ public class Informatis extends Mod {
 //            ModMetadata.init();
             SharSettingUI.init();
             WindowManager.init();
-            DialogManager.init();
+//            DialogManager.init();
             FragmentManager.init();
 //            OverDrawManager.init();
 //            ToolManager.init();
